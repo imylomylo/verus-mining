@@ -1,4 +1,5 @@
 #!/bin/bash
+source /root/verus-mining/info
 mkdir -p ~/.zcash-params
 cd ~/.zcash-params
-rsync -avz 149.28.149.204:/root/.zcash-params/*.key .
+rsync -avz $server:/root/.zcash-params/*.key .

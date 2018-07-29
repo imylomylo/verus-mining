@@ -1,0 +1,4 @@
+#!/bin/bash
+rsync=1.xx.xx.xx
+sshkey=/root/.ssh/id_rsa
+sshnopw=/root/.ssh/id_rsa_nopw

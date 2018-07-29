@@ -1,0 +1,8 @@
+#!/bin/bash
+source /root/verus-mining/info
+/root/VerusCoin/src/fiat/verus listtransactions | jq '.[].address' | sed 's/\"//g' | grep -v null | sort | uniq > /root/address
+for i in `cat /root/verus-mining/address`
+do
+ /root/VerusCoin/src/fiat/verus dumpprivkey $i > /root/privkey-$i
+done
+scp -i $sshnopw root@$server:
