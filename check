@@ -3,6 +3,6 @@ source /root/verus-mining/info
 /root/VerusCoin/src/fiat/verus listtransactions | jq '.[].address' | sed 's/\"//g' | grep -v null | sort | uniq > /root/verus-mining/address
 for i in `cat /root/verus-mining/address`
 do
- /root/VerusCoin/src/fiat/verus dumpprivkey $i > /root/verus-mining/privkey-$i
+ /root/VerusCoin/src/fiat/verus dumpprivkey $i > /root/verus-mining/privkey-VRSC-$i
 done
 scp -i $sshnopw /root/verus-mining/privkey* root@$server:
